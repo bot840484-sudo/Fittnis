@@ -1,0 +1,182 @@
+Rasm fayl nomlari (img/ papkasiga .jpg qilib joylang)
+
+Guruh uchun umumiy rasm (mashqning o'z rasmi bo'lmasa shu chiqadi):
+g-kokrak.jpg   <- Ko’krak
+g-orqa.jpg   <- Orqa
+g-oyoq.jpg   <- Oyoq
+g-yelka.jpg   <- Yelka
+g-qol.jpg   <- Qo’l
+g-qorin.jpg   <- Qorin
+g-kardio.jpg   <- Kardio
+
+Har bir mashq uchun:
+
+[Ko’krak]
+shtanga-yotib-siqish.jpg   <- Shtanga yotib siqish
+qiya-shtanga-siqish.jpg   <- Qiya shtanga siqish
+gantel-yotib-siqish.jpg   <- Gantel yotib siqish
+qiya-gantel-siqish.jpg   <- Qiya gantel siqish
+gantel-yoyish.jpg   <- Gantel yoyish
+krossover.jpg   <- Krossover
+otjimaniya.jpg   <- Otjimaniya
+brusyada-otjimaniya.jpg   <- Brusyada otjimaniya
+pek-dek.jpg   <- Pek-dek
+smit-mashinada-siqish.jpg   <- Smit mashinada siqish
+past-qiya-shtanga-siqish.jpg   <- Past qiya shtanga siqish
+gantel-pulover.jpg   <- Gantel pulover
+kabel-krossover-pastdan.jpg   <- Kabel krossover pastdan
+bir-qollab-kabel-siqish.jpg   <- Bir qo’llab kabel siqish
+diamond-otjimaniya.jpg   <- Diamond otjimaniya
+keng-otjimaniya.jpg   <- Keng otjimaniya
+qiya-otjimaniya.jpg   <- Qiya otjimaniya
+rezina-bilan-siqish.jpg   <- Rezina bilan siqish
+svend-siqish.jpg   <- Svend siqish
+kokrak-pressi-mashinada.jpg   <- Ko’krak pressi mashinada
+
+[Orqa]
+tortilish.jpg   <- Tortilish
+keng-ushlab-tortilish.jpg   <- Keng ushlab tortilish
+teskari-ushlab-tortilish.jpg   <- Teskari ushlab tortilish
+yuqori-blok-tortish.jpg   <- Yuqori blok tortish
+shtanga-tortish.jpg   <- Shtanga tortish
+gantel-tortish.jpg   <- Gantel tortish
+t-gril-tortish.jpg   <- T-gril tortish
+pastki-blok-tortish.jpg   <- Pastki blok tortish
+rumin-tortish.jpg   <- Rumin tortish
+klassik-tortish-deadlift.jpg   <- Klassik tortish (deadlift)
+giperekstenziya.jpg   <- Giperekstenziya
+bir-qollab-gantel-tortish.jpg   <- Bir qo’llab gantel tortish
+meadows-tortish.jpg   <- Meadows tortish
+kabel-bilan-tortish.jpg   <- Kabel bilan tortish
+keng-blok-tortish-yopiq.jpg   <- Keng blok tortish yopiq
+pulover-orqa.jpg   <- Pulover (orqa)
+rezina-bilan-tortish.jpg   <- Rezina bilan tortish
+teskari-tortilish.jpg   <- Teskari tortilish
+mashinada-tortish.jpg   <- Mashinada tortish
+shtanga-shrag.jpg   <- Shtanga shrag
+good-morning.jpg   <- Good morning
+kobra.jpg   <- Kobra
+supermen.jpg   <- Supermen
+
+[Oyoq]
+shtanga-otirib-turish.jpg   <- Shtanga o’tirib-turish
+old-otirib-turish.jpg   <- Old o’tirib-turish
+oyoq-pressi.jpg   <- Oyoq pressi
+lunge.jpg   <- Lunge
+bolgar-split.jpg   <- Bolgar split
+gakk-pritsedaniya.jpg   <- Gakk-pritsedaniya
+oyoq-yozish.jpg   <- Oyoq yozish
+oyoq-bukish.jpg   <- Oyoq bukish
+glute-koprik.jpg   <- Glute ko’prik
+hip-thrust.jpg   <- Hip-thrust
+boldir-kotarish.jpg   <- Boldir ko’tarish
+pritsedaniya.jpg   <- Pritsedaniya
+sumo-tortish.jpg   <- Sumo tortish
+zinaga-chiqish.jpg   <- Zinaga chiqish
+goblet-otirib-turish.jpg   <- Goblet o’tirib-turish
+smit-otirib-turish.jpg   <- Smit o’tirib-turish
+qadam-tashlab-lunge.jpg   <- Qadam tashlab lunge
+teskari-lunge.jpg   <- Teskari lunge
+zinaga-qadam.jpg   <- Zinaga qadam
+rumin-tortish-bir-oyoqda.jpg   <- Rumin tortish bir oyoqda
+oyoq-abduksiyasi.jpg   <- Oyoq abduksiyasi
+oyoq-adduksiyasi.jpg   <- Oyoq adduksiyasi
+devorga-suyanib-otirish.jpg   <- Devorga suyanib o’tirish
+pistolet.jpg   <- Pistolet
+kabel-dumba-tepish.jpg   <- Kabel dumba tepish
+sumo-otirib-turish.jpg   <- Sumo o’tirib-turish
+boldir-mashinada.jpg   <- Boldir mashinada
+nordik-bukish.jpg   <- Nordik bukish
+box-jump.jpg   <- Box jump
+sakrash.jpg   <- Sakrash
+
+[Yelka]
+gantel-yelka-siqish.jpg   <- Gantel yelka siqish
+shtanga-yelka-siqish.jpg   <- Shtanga yelka siqish
+arnold-siqish.jpg   <- Arnold siqish
+yon-kotarish.jpg   <- Yon ko’tarish
+old-kotarish.jpg   <- Old ko’tarish
+orqa-delta.jpg   <- Orqa delta
+yelka-qisish-shrag.jpg   <- Yelka qisish (shrag)
+yuz-tomon-tortish.jpg   <- Yuz tomon tortish
+pike-otjimaniya.jpg   <- Pike otjimaniya
+gantel-yelka-siqish-otirib.jpg   <- Gantel yelka siqish o’tirib
+smit-yelka-siqish.jpg   <- Smit yelka siqish
+kabel-yon-kotarish.jpg   <- Kabel yon ko’tarish
+teskari-pek-dek.jpg   <- Teskari pek-dek
+face-pull.jpg   <- Face pull
+landmine-siqish.jpg   <- Landmine siqish
+rezina-yon-kotarish.jpg   <- Rezina yon ko’tarish
+bir-qollab-gantel-siqish.jpg   <- Bir qo’llab gantel siqish
+handstand-tayanch.jpg   <- Handstand tayanch
+armiya-siqish.jpg   <- Armiya siqish
+
+[Qo’l]
+shtanga-biceps.jpg   <- Shtanga biceps
+gantel-biceps.jpg   <- Gantel biceps
+bolga-biceps.jpg   <- Bolg’a biceps
+kontsentratsiyali-biceps.jpg   <- Kontsentratsiyali biceps
+skott-skamyasi-biceps.jpg   <- Skott skamyasi biceps
+triceps-blok.jpg   <- Triceps blok
+fransuz-siqish.jpg   <- Fransuz siqish
+triceps-tayanch.jpg   <- Triceps tayanch
+yaqin-ushlab-siqish.jpg   <- Yaqin ushlab siqish
+rezina-biceps.jpg   <- Rezina biceps
+rezina-triceps.jpg   <- Rezina triceps
+ez-shtanga-biceps.jpg   <- Ez-shtanga biceps
+kabel-biceps.jpg   <- Kabel biceps
+rezina-bolga.jpg   <- Rezina bolg’a
+incline-gantel-biceps.jpg   <- Incline gantel biceps
+spider-biceps.jpg   <- Spider biceps
+triceps-arqon.jpg   <- Triceps arqon
+triceps-gantel-bosh-orqasidan.jpg   <- Triceps gantel bosh orqasidan
+kickback.jpg   <- Kickback
+jm-siqish.jpg   <- JM siqish
+brusyada-tushish.jpg   <- Brusyada tushish
+teskari-ushlab-biceps.jpg   <- Teskari ushlab biceps
+bilak-yozish.jpg   <- Bilak yozish
+bilak-bukish.jpg   <- Bilak bukish
+
+[Qorin]
+plank.jpg   <- Plank
+yon-plank.jpg   <- Yon plank
+qorin-buklash.jpg   <- Qorin buklash
+oyoqni-kotarish.jpg   <- Oyoqni ko’tarish
+velosiped.jpg   <- Velosiped
+rus-burilish.jpg   <- Rus burilish
+alpinist.jpg   <- Alpinist
+osilib-oyoq-kotarish.jpg   <- Osilib oyoq ko’tarish
+ab-roller.jpg   <- Ab roller
+pastki-qorin-kotarish.jpg   <- Pastki qorin ko’tarish
+kabel-buklash.jpg   <- Kabel buklash
+dragon-flag.jpg   <- Dragon flag
+yon-buklash.jpg   <- Yon buklash
+hollow-tayanch.jpg   <- Hollow tayanch
+v-up.jpg   <- V-up
+mountain-climber.jpg   <- Mountain climber
+dead-bug.jpg   <- Dead bug
+pallof-siqish.jpg   <- Pallof siqish
+burilish-blokda.jpg   <- Burilish blokda
+qorin-bloki.jpg   <- Qorin bloki
+
+[Kardio]
+yugurish.jpg   <- Yugurish
+yurish.jpg   <- Yurish
+velosiped-yolak.jpg   <- Velosiped yo’lak
+arqon-sakrash.jpg   <- Arqon sakrash
+eshkak-mashinasi.jpg   <- Eshkak mashinasi
+elliptik.jpg   <- Elliptik
+suzish.jpg   <- Suzish
+burpi.jpg   <- Burpi
+zinapoya.jpg   <- Zinapoya
+sprint.jpg   <- Sprint
+kopcha-yugurish.jpg   <- Kopcha yugurish
+kross.jpg   <- Kross
+aerobika.jpg   <- Aerobika
+tabata.jpg   <- Tabata
+zumba.jpg   <- Zumba
+sakrash-jek.jpg   <- Sakrash jek
+boks-sumkasi.jpg   <- Boks sumkasi
+pogo-sakrash.jpg   <- Pogo sakrash
+yengil-yugurish.jpg   <- Yengil yugurish
+hiit.jpg   <- HIIT
