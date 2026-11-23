@@ -1,1 +1,52 @@
-{"name":"Mashq Kuzatuvchi","short_name":"Mashq","start_url":"./","scope":"./","display":"standalone","background_color":"#05070f","theme_color":"#05070f","lang":"uz","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
+{
+  "name": "Fittnis",
+  "short_name": "Fittnis",
+  "description": "Fittnis: bepul fitnes ilova. Mashqlar, ovqat, suv, uyqu va qadamlarni kuzating, daraja oshiring, do'stlar bilan raqobatlashing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "uz",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Yangi mashq",
+      "short_name": "Mashq",
+      "description": "Yangi mashq qo'shish",
+      "url": "/#log?action=add",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Yugurish",
+      "short_name": "Yugurish",
+      "description": "Yugurishni boshlash",
+      "url": "/#run",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ovqat",
+      "short_name": "Ovqat",
+      "description": "Ovqat qo'shish",
+      "url": "/#food?action=add",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

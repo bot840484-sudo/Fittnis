@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Fittnis Icons</title>
+  <style>
+    body { font-family: system-ui; padding: 20px; background: #0d1117; color: #e6edf3; }
+    .container { max-width: 600px; margin: 0 auto; }
+    canvas { border: 1px solid #30363d; border-radius: 8px; margin: 10px 0; background: #0d1117; }
+    button { background: linear-gradient(135deg, #f78166, #f85149); border: none; color: white; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; }
+    button:hover { opacity: 0.9; }
+    .icons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .icon-box { text-align: center; }
+    .icon-box img { max-width: 100%; border-radius: 8px; border: 1px solid #30363d; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Fittnis Icon Generator</h1>
+    <p>This page generates the required PNG icons (192x192 and 512x512) from the SVG.</p>
+
+    <button onclick="generateIcons()">Generate Icons</button>
+
+    <div class="icons">
+      <div class="icon-box">
+        <h3>192x192</h3>
+        <canvas id="canvas192" width="192" height="192"></canvas>
+        <br>
+        <a id="download192" class="btn" style="display:inline-block; margin-top:10px; text-decoration:none; padding:8px 16px; background:#238636; border-radius:6px;">Download icon-192.png</a>
+      </div>
+      <div class="icon-box">
+        <h3>512x512</h3>
+        <canvas id="canvas512" width="512" height="512"></canvas>
+        <br>
+        <a id="download512" class="btn" style="display:inline-block; margin-top:10px; text-decoration:none; padding:8px 16px; background:#238636; border-radius:6px;">Download icon-512.png</a>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px; color: #8b949e;">
+      <strong>Instructions:</strong> Click "Generate Icons", then download both PNG files and place them in the project root.
+    </p>
+  </div>
+
+  <script>
+    const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f78166;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f85149;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d29922;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#bgGrad)" stroke="url(#iconGrad)" stroke-width="4"/>
+  <g filter="url(#glow)">
+    <rect x="100" y="196" width="56" height="120" rx="8" fill="url(#iconGrad)"/>
+    <rect x="108" y="204" width="40" height="104" rx="4" fill="#0d1117"/>
+    <rect x="156" y="246" width="200" height="20" rx="10" fill="url(#iconGrad)"/>
+    <rect x="164" y="250" width="184" height="12" rx="6" fill="#0d1117"/>
+    <rect x="356" y="196" width="56" height="120" rx="8" fill="url(#iconGrad)"/>
+    <rect x="364" y="204" width="40" height="104" rx="4" fill="#0d1117"/>
+    <g fill="none" stroke="#f78166" stroke-width="2" stroke-opacity="0.6">
+      <line x1="216" y1="250" x2="216" y2="262"/>
+      <line x1="236" y1="250" x2="236" y2="262"/>
+      <line x1="256" y1="250" x2="256" y2="262"/>
+      <line x1="276" y1="250" x2="276" y2="262"/>
+      <line x1="296" y1="250" x2="296" y2="262"/>
+    </g>
+  </g>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#iconGrad)" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="256" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="800"
+        fill="url(#iconGrad)" fill-opacity="0.15" text-anchor="middle" dominant-baseline="middle">F</text>
+</svg>`;
+
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, size, size);
+      };
+      img.src = 'data:image/svg+xml;base64,' + btoa(svgContent);
+    }
+
+    function generateIcons() {
+      drawIcon(document.getElementById('canvas192'), 192);
+      drawIcon(document.getElementById('canvas512'), 512);
+
+      setTimeout(() => {
+        const c192 = document.getElementById('canvas192');
+        const c512 = document.getElementById('canvas512');
+
+        document.getElementById('download192').href = c192.toDataURL('image/png');
+        document.getElementById('download192').download = 'icon-192.png';
+        document.getElementById('download192').style.display = 'inline-block';
+
+        document.getElementById('download512').href = c512.toDataURL('image/png');
+        document.getElementById('download512').download = 'icon-512.png';
+        document.getElementById('download512').style.display = 'inline-block';
+      }, 100);
+    }
+
+    // Auto-generate on load
+    window.onload = generateIcons;
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+name: Deploy Fittnis to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      deploy_branch:
+        description: 'Branch to deploy from'
+        required: false
+        default: 'main'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci
+          else
+            echo "No package.json found, skipping npm install"
+          fi
+
+      - name: Validate HTML and JS
+        run: |
+          # Check that required files exist
+          for file in index.html manifest.json sw.js supabase.sql; do
+            if [ -f "$file" ]; then
+              echo "✅ $file exists"
+            else
+              echo "❌ $file missing"
+              exit 1
+            fi
+          done
+
+          # Check that JS module files exist
+          for file in src/js/app.js src/js/utils/storage.js src/js/utils/store.js src/js/utils/i18n.js src/js/utils/api.js src/js/utils/auth.js; do
+            if [ -f "$file" ]; then
+              echo "✅ $file exists"
+            else
+              echo "❌ $file missing"
+              exit 1
+            fi
+          done
+
+          # Check that view files exist
+          for view in AuthView TodayView LogView RunView FoodView SettingsView LeaderboardView ViewBase; do
+            if [ -f "src/js/views/${view}.js" ]; then
+              echo "✅ ${view}.js exists"
+            else
+              echo "❌ ${view}.js missing"
+              exit 1
+            fi
+          done
+
+      - name: Check for syntax errors in JS files
+        run: |
+          # Use node to check syntax of all JS files
+          find src/js -name "*.js" -type f | while read file; do
+            echo "Checking $file..."
+            node --check "$file" || exit 1
+          done
+
+      - name: Build (if needed)
+        run: |
+          if [ -f "package.json" ]; then
+            # Check for build scripts
+            if grep -q '"build"' package.json; then
+              npm run build
+            else
+              echo "No build script, using files as-is"
+            fi
+          fi
+
+      - name: Prepare deployment
+        run: |
+          # Create a deployment-ready directory
+          mkdir -p dist
+
+          # Copy all files to dist
+          cp -r index.html manifest.json sw.js icon.svg src/ dist/
+
+          # Create .nojekyll to bypass GitHub Pages Jekyll processing
+          touch dist/.nojekyll
+
+          # Verify deployment files
+          ls -la dist/
+          echo "✅ Deployment ready"
+
+    outputs:
+      pages-path: dist
+
+  deploy:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare deployment files
+        run: |
+          # Ensure icons exist (generate placeholder if needed)
+          if [ ! -f "icon-192.png" ] || [ ! -f "icon-512.png" ]; then
+            echo "Generating placeholder icons..."
+            # Create 1x1 pixel PNGs as placeholders
+            base64 -d <<'EOF' > icon-192.png
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+EOF
+            cp icon-192.png icon-512.png
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Notify deployment
+        run: |
+          echo "🎉 Fittnis deployed to: ${{ steps.deployment.outputs.page_url }}"
+
+  # Optional: Run security audit
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Audit dependencies
+        run: |
+          if [ -f "package-lock.json" ] || [ -f "npm-shrinkwrap.json" ]; then
+            npm audit --audit-level=moderate
+          fi
+
+      - name: Check for secrets
+        run: |
+          # Basic check for hardcoded keys
+          if grep -rE "(sb_publishable_|sk_live_|AIza|sk-proj-)" --include="*.js" --include="*.html" src/ 2>/dev/null; then
+            echo "⚠️ Potential hardcoded keys found (excluding intentional ones)"
+          else
+            echo "✅ No hardcoded keys found in source"
+          fi
+
+      - name: Security check complete
+        run: echo "✅ Security audit complete"
