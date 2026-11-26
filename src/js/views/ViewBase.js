@@ -28,7 +28,7 @@ class ViewBase {
     const unsub = Store.subscribe(key, callback);
     this._subscriptions.push(unsub);
     return unsub;
-  },
+  }
 
   // Show view
   show() {
@@ -50,7 +50,7 @@ class ViewBase {
   destroy() {
     this._subscriptions.forEach(unsub => unsub());
     this._subscriptions = [];
-  },
+  }
 
   // Helpers
   $(selector) { return this.el.querySelector(selector); }
